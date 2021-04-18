@@ -4,6 +4,7 @@
  * Edwin Nellickal (nelli053@umn.edu)
  ******************************************************************************/
 import java.io.IOException;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.rmi.AlreadyBoundException;
@@ -15,10 +16,14 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
-public class Server implements Node {
+public class Server extends UnicastRemoteObject implements Node {
 
 	private static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	
+	private String nodeURL;
 
 	public static void main(String[] args) throws AlreadyBoundException, SecurityException, IOException {
 		if (args.length != 1) {
@@ -52,8 +57,12 @@ public class Server implements Node {
 		localRegistry.bind(serverName, dataStore); // setting up
 	}
 
-	public Server(int serverId, String serverName) {
+	public Server(int serverId, String serverName) throws UnknownHostException, RemoteException {
 		super();
+		this.nodeURL = String.format("%s:%s/%s", 
+										InetAddress.getLocalHost().getHostName(),
+										Constants.RMI_PORT, serverName);
+		logger.info("nodeURL is: "+nodeURL);
 		int nodeHash = FNV1aHash.hash32( serverName );
 		logger.info("Hash for this serverName is: "+nodeHash);
 	}
@@ -89,13 +98,13 @@ public class Server implements Node {
 	}
 
 	@Override
-	public boolean join(String nodeURL) throws RemoteException {
+	public synchronized boolean join(String nodeURL) throws RemoteException {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean joinFinished(String nodeURL) throws RemoteException {
+	public synchronized boolean joinFinished(String nodeURL) throws RemoteException {
 		// TODO Auto-generated method stub
 		return false;
 	}
