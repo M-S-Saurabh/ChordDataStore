@@ -15,8 +15,8 @@ public interface Node extends Remote {
   public String  closestPrecedingFinger (int key) throws RemoteException;
   public String  successor () throws RemoteException;
   public String  predecessor  () throws RemoteException;
-  public boolean join (String nodeURL) throws RemoteException;
-  public boolean joinFinished (String nodeURL) throws RemoteException;
+  public boolean join (String nodeURL) throws RemoteException, InterruptedException;
+  public boolean joinFinished (String nodeURL) throws RemoteException, InterruptedException;
   public boolean insert (String word, String definition) throws RemoteException;
   public String  lookup (String word) throws RemoteException;
   public String  printFingerTable() throws RemoteException;

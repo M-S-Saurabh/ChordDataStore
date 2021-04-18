@@ -52,8 +52,8 @@ public class DictionaryLoader {
 
 	private static Node connectToServer(String nodeURL) {
 		System.setProperty("java.security.policy","file:./security.policy");
-		
         System.setSecurityManager(new SecurityManager());
+        
 		try {
 			// Getting Server stub from RMI registry.
 			Node chordServer = (Node) Naming.lookup(String.format("rmi://%s", nodeURL));

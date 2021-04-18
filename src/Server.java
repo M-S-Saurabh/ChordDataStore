@@ -6,9 +6,13 @@
 import java.io.IOException;
 
 import java.net.InetAddress;
+import java.net.MalformedURLException;
 import java.net.UnknownHostException;
+import java.rmi.AccessException;
 import java.rmi.AlreadyBoundException;
+import java.rmi.Naming;
 import java.rmi.NoSuchObjectException;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -24,22 +28,24 @@ public class Server extends UnicastRemoteObject implements Node {
 	private static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	private String nodeURL;
+	
+	private String joiningURL;
 
-	public static void main(String[] args) throws AlreadyBoundException, SecurityException, IOException {
+	private String rmiUrlFormat;
+
+	public static void main(String[] args) throws AlreadyBoundException, SecurityException, IOException, InterruptedException {
 		if (args.length != 1) {
 			throw new RuntimeException("Syntax: Server <server ID>");
 		}
 		int serverId = Integer.parseInt(args[0]);
 
-		System.out.println(String.format("Hostname is %s", InetAddress.getLocalHost().getHostName()));
+		setupLogger(serverId);
 
-		// This block configure the logger with handler and formatter FileHandler fh
-		FileHandler fh = new FileHandler(String.format("./logs/Server-%d.log", serverId));
-		logger.addHandler(fh);
-		System.setProperty("java.util.logging.SimpleFormatter.format", Constants.LOG_FORMAT); 
-		SimpleFormatter formatter = new SimpleFormatter();
-		fh.setFormatter(formatter);
+		bindToLocalRMI(serverId);
+	}
 
+	private static void bindToLocalRMI(int serverId) throws UnknownHostException, NoSuchObjectException,
+			RemoteException, AlreadyBoundException, AccessException, InterruptedException {
 		// setting the security policy
 		System.setProperty("java.security.policy", "file:./security.policy");
 		System.setProperty("java.rmi.server.hostname", InetAddress.getLocalHost().getHostName());
@@ -57,14 +63,49 @@ public class Server extends UnicastRemoteObject implements Node {
 		localRegistry.bind(serverName, dataStore); // setting up
 	}
 
-	public Server(int serverId, String serverName) throws UnknownHostException, RemoteException {
+	// This function configure the logger with handler and formatter FileHandler fh
+	private static void setupLogger(int serverId) throws IOException {
+		FileHandler fh = new FileHandler(String.format("./logs/Server-%d.log", serverId));
+		logger.addHandler(fh);
+		System.setProperty("java.util.logging.SimpleFormatter.format", Constants.LOG_FORMAT); 
+		SimpleFormatter formatter = new SimpleFormatter();
+		fh.setFormatter(formatter);
+	}
+
+	public Server(int serverId, String serverName) throws UnknownHostException, RemoteException, InterruptedException {
 		super();
-		this.nodeURL = String.format("%s:%s/%s", 
-										InetAddress.getLocalHost().getHostName(),
-										Constants.RMI_PORT, serverName);
+		this.rmiUrlFormat = String.format("rmi://%s:%s/%s", 
+											InetAddress.getLocalHost().getHostName(),
+											Constants.RMI_PORT, 
+											Constants.RMI_SERVER_NAME);
+		this.nodeURL = String.format(this.rmiUrlFormat, serverId);
 		logger.info("nodeURL is: "+nodeURL);
+		this.joiningURL = "";
+		
 		int nodeHash = FNV1aHash.hash32( serverName );
 		logger.info("Hash for this serverName is: "+nodeHash);
+		if(serverId > 0) {
+			this.connectToCluster();
+		}
+	}
+	
+	private void connectToCluster() throws UnknownHostException, InterruptedException {
+		System.setProperty("java.security.policy","file:./security.policy");
+        System.setSecurityManager(new SecurityManager());
+        
+		try {
+			// Getting Node-0 stub from RMI registry.
+			String rmiURL = String.format(this.rmiUrlFormat, 0);
+			Node node0 = (Node) Naming.lookup(rmiURL);
+			node0.join(this.nodeURL);
+			
+			node0.joinFinished(this.nodeURL);
+			
+		} catch (MalformedURLException | RemoteException | NotBoundException e) {
+			logger.severe("Couldn't establish RMI registry connection.");
+			logger.severe(e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -98,14 +139,22 @@ public class Server extends UnicastRemoteObject implements Node {
 	}
 
 	@Override
-	public synchronized boolean join(String nodeURL) throws RemoteException {
-		// TODO Auto-generated method stub
-		return false;
+	public synchronized boolean join(String nodeURL) throws RemoteException, InterruptedException {
+		while(this.joiningURL.length() != 0) {
+			wait();
+		}
+		this.joiningURL = nodeURL;
+		notify();
+		return true;
 	}
 
 	@Override
-	public synchronized boolean joinFinished(String nodeURL) throws RemoteException {
-		// TODO Auto-generated method stub
+	public synchronized boolean joinFinished(String nodeURL) throws RemoteException, InterruptedException {
+		while(!this.joiningURL.equals(nodeURL)) {
+			wait();
+		}
+		this.joiningURL = "";
+		notify();
 		return false;
 	}
 
