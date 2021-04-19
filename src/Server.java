@@ -20,6 +20,8 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -32,6 +34,16 @@ public class Server extends UnicastRemoteObject implements Node {
 	private String joiningURL;
 
 	private String rmiUrlFormat;
+
+	private Map<String, Node> nodeMapping;
+
+	int nodeId;
+
+	private ArrayList<Finger> finger;
+
+	private Node predecessorNode;
+
+	private int m;
 
 	public static void main(String[] args) throws AlreadyBoundException, SecurityException, IOException, InterruptedException {
 		if (args.length != 1) {
@@ -82,13 +94,28 @@ public class Server extends UnicastRemoteObject implements Node {
 		logger.info("nodeURL is: "+nodeURL);
 		this.joiningURL = "";
 		
-		int nodeHash = FNV1aHash.hash32( serverName );
-		logger.info("Hash for this serverName is: "+nodeHash);
+		this.m = Constants.KEY_BITS;
+		
+		this.nodeId = FNV1aHash.hash32( serverName );
+		logger.info("Hash for this serverName is: "+this.nodeId);
+		
+		this.createFingerTable();
+		
 		if(serverId > 0) {
 			this.connectToCluster();
 		}
 	}
 	
+	// This is not the same as init_finger_table in the paper,
+	// Please see updateFingerTable().
+	private void createFingerTable() {
+		finger = new ArrayList<Finger>();
+		finger.add(null);
+		for(int i=1; i<=m; i++) {
+			finger.add(new Finger(nodeId, i));
+		}
+	}
+
 	private void connectToCluster() throws UnknownHostException, InterruptedException {
 		System.setProperty("java.security.policy","file:./security.policy");
         System.setSecurityManager(new SecurityManager());
@@ -109,33 +136,39 @@ public class Server extends UnicastRemoteObject implements Node {
 	}
 
 	@Override
-	public String findSuccessor(int key, boolean traceFlag) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+	public Node findSuccessor(int key, boolean traceFlag) throws RemoteException {
+		Node n1 = this.findPredecessor(key);
+		return n1.successor();
 	}
 
 	@Override
-	public String findPredecessor(int key) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+	public Node findPredecessor(int key) throws RemoteException {
+		Node n1 = this;
+		while(key <= n1.getNodeId() || key > n1.successor().getNodeId()) {
+			n1 = n1.closestPrecedingFinger(key);
+		}
+		return n1;
 	}
 
 	@Override
-	public String closestPrecedingFinger(int key) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+	public Node closestPrecedingFinger(int key) throws RemoteException {
+		for(int i=m; i>0; i--) {
+			if(this.nodeId < this.finger.get(i).node.getNodeId() 
+					&& this.finger.get(i).node.getNodeId() < key) {
+				return this.finger.get(i).node;
+			}
+		}
+		return this;
 	}
 
 	@Override
-	public String successor() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+	public Node successor() throws RemoteException {
+		return this.finger.get(1).node;
 	}
 
 	@Override
-	public String predecessor() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+	public Node predecessor() throws RemoteException {
+		return this.predecessorNode;
 	}
 
 	@Override
@@ -147,7 +180,7 @@ public class Server extends UnicastRemoteObject implements Node {
 		notify();
 		return true;
 	}
-
+	
 	@Override
 	public synchronized boolean joinFinished(String nodeURL) throws RemoteException, InterruptedException {
 		while(!this.joiningURL.equals(nodeURL)) {
@@ -156,6 +189,51 @@ public class Server extends UnicastRemoteObject implements Node {
 		this.joiningURL = "";
 		notify();
 		return false;
+	}
+	
+	private void joinProcess(Node n1) throws RemoteException {
+		if (n1 != null) {
+			initFingerTable(n1);
+			updateOthers();
+		}else {
+			for(int i=1; i<=m; i++) {
+				this.finger.get(i).node = this;
+			}
+			this.predecessorNode = this;
+		}
+	}
+
+	// This function is originally called init_finger_table in the paper.
+	private void initFingerTable(Node n1) throws RemoteException {
+		boolean traceFlag = false;
+		this.finger.get(1).node = n1.findSuccessor(finger.get(1).start, traceFlag);
+		this.predecessorNode = this.successor().predecessor();
+		this.successor().setPredecessor(this);
+		for(int i=1; i<m; i++) {
+			if(this.nodeId < finger.get(i+1).start 
+					&& finger.get(i+1).start < finger.get(i+1).node.getNodeId()) {
+				finger.get(i+1).node = finger.get(i).node;
+			}else {
+				finger.get(i+1).node = n1.findSuccessor(finger.get(i+1).start, traceFlag);
+			}
+		}
+	}
+	
+	private void updateOthers() throws RemoteException {
+		int n = this.getNodeId();
+		for(int i=1; i<=m; i++) {
+			Node p = findPredecessor(n - (1 << (i-1)));
+			p.updateFingerTable(this, i);
+		}
+	}
+	
+	@Override
+	public void updateFingerTable(Node s, int i) throws RemoteException {
+		if( this.getNodeId() <= s.getNodeId() && s.getNodeId() < finger.get(i).node.getNodeId()) {
+			finger.get(i).node = s;
+			Node p = predecessor();
+			p.updateFingerTable(s, i);
+		}
 	}
 
 	@Override
@@ -180,6 +258,16 @@ public class Server extends UnicastRemoteObject implements Node {
 	public String printDictionary() throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int getNodeId() throws RemoteException {
+		return this.nodeId;
+	}
+
+	@Override
+	public void setPredecessor(Node node) throws RemoteException {
+		this.predecessorNode = node;
 	}
 
 }
