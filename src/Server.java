@@ -21,6 +21,8 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -35,7 +37,7 @@ public class Server extends UnicastRemoteObject implements Node {
 
 	private String rmiUrlFormat;
 
-	private Map<String, Node> nodeMapping;
+	private Hashtable<String, String> dictionary;
 
 	int nodeId;
 
@@ -100,6 +102,8 @@ public class Server extends UnicastRemoteObject implements Node {
 		logger.info("Hash for this serverName is: "+this.nodeId);
 		
 		this.createFingerTable();
+		
+		this.dictionary = new Hashtable<String, String>();
 		
 		if(serverId > 0) {
 			this.connectToCluster();
@@ -238,31 +242,71 @@ public class Server extends UnicastRemoteObject implements Node {
 
 	@Override
 	public boolean insert(String word, String definition) throws RemoteException {
-		// TODO Auto-generated method stub
+		int key = FNV1aHash.hash32(word);
+		Node p = this.findPredecessor(key).successor();
+		p.insertHere(word, definition);
 		return false;
+	}
+	
+	@Override
+	public void insertHere(String word, String definition) throws RemoteException {
+		this.dictionary.put(word, definition);
 	}
 
 	@Override
 	public String lookup(String word) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		int key = FNV1aHash.hash32(word);
+		Node p = this.findPredecessor(key).successor();
+		return p.lookupHere(word);
+	}
+	
+	@Override
+	public String lookupHere(String word) throws RemoteException {
+		return this.dictionary.get(word);
 	}
 
 	@Override
 	public String printFingerTable() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		StringBuilder b = new StringBuilder();
+		this.finger.forEach((fgr)->{
+			try {
+				b.append("start:"); b.append(fgr.start);
+				Node node = fgr.node;
+				b.append(" node-key:"); b.append(node.getNodeId());
+				b.append(" node-url:"); b.append(node.getNodeURL());
+				b.append(System.lineSeparator());
+			} catch (RemoteException e) {
+				e.printStackTrace();
+			}
+		});
+		String tableString = b.toString();
+				
+		logger.info("------Printing Local Finger Table----");
+		logger.info(tableString);
+		return tableString;
 	}
 
 	@Override
 	public String printDictionary() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		StringBuilder b = new StringBuilder();
+		this.dictionary.forEach((key, value)->{
+			b.append(key); b.append(':'); b.append(value); b.append(System.lineSeparator());
+		});
+		String dictString = b.toString();
+				
+		logger.info("------Printing Local Dictionary----");
+		logger.info(dictString);
+		return dictString;
 	}
 
 	@Override
 	public int getNodeId() throws RemoteException {
 		return this.nodeId;
+	}
+	
+	@Override
+	public String getNodeURL() throws RemoteException {
+		return this.nodeURL;
 	}
 
 	@Override
