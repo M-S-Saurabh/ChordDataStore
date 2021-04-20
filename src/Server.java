@@ -121,9 +121,6 @@ public class Server extends UnicastRemoteObject implements Node {
 	}
 
 	private void connectToCluster() throws UnknownHostException, InterruptedException {
-		System.setProperty("java.security.policy","file:./security.policy");
-        System.setSecurityManager(new SecurityManager());
-        
 		try {
 			// Getting Node-0 stub from RMI registry.
 			String rmiURL = String.format(this.rmiUrlFormat, 0);
@@ -215,7 +212,7 @@ public class Server extends UnicastRemoteObject implements Node {
 		this.successor().setPredecessor(this);
 		for(int i=1; i<m; i++) {
 			if(this.nodeId < finger.get(i+1).start 
-					&& finger.get(i+1).start < finger.get(i+1).node.getNodeId()) {
+					&& finger.get(i+1).start <= finger.get(i+1).node.getNodeId()) {
 				finger.get(i+1).node = finger.get(i).node;
 			}else {
 				finger.get(i+1).node = n1.findSuccessor(finger.get(i+1).start, traceFlag);
@@ -226,14 +223,14 @@ public class Server extends UnicastRemoteObject implements Node {
 	private void updateOthers() throws RemoteException {
 		int n = this.getNodeId();
 		for(int i=1; i<=m; i++) {
-			Node p = findPredecessor(n - (1 << (i-1)));
+			Node p = findPredecessor(n - (1 << (i-1)) + 1);
 			p.updateFingerTable(this, i);
 		}
 	}
 	
 	@Override
 	public void updateFingerTable(Node s, int i) throws RemoteException {
-		if( this.getNodeId() <= s.getNodeId() && s.getNodeId() < finger.get(i).node.getNodeId()) {
+		if( finger.get(i).start <= s.getNodeId() && s.getNodeId() < finger.get(i).node.getNodeId()) {
 			finger.get(i).node = s;
 			Node p = predecessor();
 			p.updateFingerTable(s, i);
