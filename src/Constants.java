@@ -30,6 +30,8 @@ public final class Constants {
 	public static final String RMI_SERVER_NAME = "node0%d";
 
 	public static final int KEY_BITS = 31;
+
+	public static final String NOT_FOUND = "NOT FOUND";
 	
 //	public static enum MessageType {
 //		CREATE, 

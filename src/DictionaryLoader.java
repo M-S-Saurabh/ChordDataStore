@@ -43,7 +43,7 @@ public class DictionaryLoader {
 	}
 	
 	private static void configureLogger() throws SecurityException, IOException {
-		FileHandler fh = new FileHandler("./logs/DictionaryLogger.log");
+		FileHandler fh = new FileHandler("./logs/DictionaryLoader.log");
 		logger.addHandler(fh);
 		System.setProperty("java.util.logging.SimpleFormatter.format", Constants.LOG_FORMAT); 
 		SimpleFormatter formatter = new SimpleFormatter();
