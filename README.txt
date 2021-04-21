@@ -1,3 +1,8 @@
+RESULTS: 
+----------
+The Finger tables, and Dictionary Tables of each node are given in "RESULTS.txt" file.
+Diagram is attached as png file: "ChordDiagram.png"
+
 -----------------------------------------------------------------------------------------------------------------------
 HOW TO RUN:
 -------------------------------------------
@@ -47,19 +52,67 @@ WITHOUT USING THE PYTHON SCRIPT:
 - Wait for the DictionaryLoader to complete, start the client process:
 		java Client localhost:<port-number>/node00 <number-of-nodes>
 
+---------------------------------------------------------------------------------------------------
+CLIENT INTERACTION EXAMPLE:
+---------------------------
+
+LOOKUP EXAMPLE
+---------------
+Enter 1 to lookup, 2 to exit, 3 to print tables
+Enter your choice: 
+1
+Enter a word to query: 
+litre
+Result: a liquid measure equivalent to 1000 CC.
+
+PRINT DICTIONARY
+----------------
+Enter 1 to lookup, 2 to exit, 3 to print tables
+Enter your choice: 
+3
+Enter a node-id to query: 
+0
+Dictionary table:
+  jump:a sudden movement
+fascinate:attract, enchant
+disaffection:dislike, hostility, disgust
+inquisitive:curious to know
+outing:a pleasure trip
+ebb:decay, flow back
+clamp:a device to hold things together
+incurious:uninteresting, careless
+bail:one who gives security 
+papyrus:a seed once used to make paper
+ebony:a kind of hard black wood
+aegis:shield, protection
+Number of entries is: 12 
+
+EXIT EXAMPLE
+--------------
+Enter 1 to lookup, 2 to exit, 3 to print tables
+Enter your choice: 
+2
+Exiting...
+
 -----------------------------------------------------------------------------------------------------------------------
-LOG FILES
-------------
+LOG FILES NAMING
+----------------
+
+Server with id=i has log file named as "Server-i.log". 
+	E.g. Log file of 'node00' is named 'Server-0.log'
+
+Client log is named: "Client.log"
+
+DictionaryLoader log is named: "DictionaryLoader.log"
 
 -----------------------------------------------------------------------------------------------------------------------
 KNOWN BUGS:
 ------------------
 
------------------------------------------------------------------------------------------------------------------------
-Results of Performance measurement experiment:
------------------------------------------------
+- All features are implemented. Everyting works as expected. (No known bugs)
 
----------------------
-Server avg.: 0.0217s 
-Client avg.: 0.0224s
+- For each chord-id, we are NOT using the hash of its URL. 
+  Instead, we are generating a random number less than max integer value.
+  We are doing this to get a uniform load ditribution of words across nodes.
+-----------------------------------------------------------------------------------------------------------------------
 

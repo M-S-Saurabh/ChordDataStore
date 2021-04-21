@@ -34,7 +34,7 @@ public class Client {
 		boolean exitLoop = false;
 		while(!exitLoop) {
 			Scanner scan = new Scanner(System.in);
-		    System.out.println("Enter 1 to lookup, 2 to exit, 3 print tables");
+		    System.out.println("\nEnter 1 to lookup, 2 to exit, 3 to print tables");
 		    System.out.println("Enter your choice: ");
 
 		    int option = Integer.parseInt(scan.nextLine());
@@ -48,7 +48,7 @@ public class Client {
 		    	String result = client.wordLookup(queryWord); 
 		    	System.out.println(String.format("Result: %s", result));
 		    } else if (option == 3) {
-		    	System.out.println("Enter a node id to query: ");
+		    	System.out.println("Enter a node-id to query: ");
 		    	int queryWord = Integer.parseInt(scan.nextLine());
 		    	String result = client.printDictionary(queryWord); 
 		    	System.out.println(String.format("Dictionary table:\n  %s ", result));

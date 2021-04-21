@@ -13,8 +13,8 @@ public interface Node extends Remote {
 	public int getNodeId() throws RemoteException;
 	public void setPredecessor(Node node) throws RemoteException;
 	public Node  findSuccessor (int key, boolean traceFlag) throws RemoteException;
-	public Node  findPredecessor (int key) throws RemoteException;
-	public Node  closestPrecedingFinger (int key) throws RemoteException;
+	public Node  findPredecessor (int key, boolean traceFlag) throws RemoteException;
+	public Node  closestPrecedingFinger (int key, boolean traceFlag) throws RemoteException;
 	public Node  successor () throws RemoteException;
 	public Node  predecessor  () throws RemoteException;
 	public boolean join (String nodeURL) throws RemoteException, InterruptedException;

@@ -33,6 +33,10 @@ public final class Constants {
 
 	public static final String NOT_FOUND = "NOT FOUND";
 	
+	public static final long RANDOM_SEED = 49;
+
+	public static final String FUNC_LOG = "Node:%s - Function:%s - Arguments:%s";
+	
 //	public static enum MessageType {
 //		CREATE, 
 //		DEPOSTI,

@@ -1,0 +1,500 @@
+Node #  Node ID
+------  ---------
+node00  1566470994
+node01  869706603
+node02  263692001
+node03  483083110
+node04  713981616
+node05  1441374763
+node06  1823638113
+node07  705743297
+--------------------------------------------------------------------
+
+Printing Finger Tables...
+---Node 0:---
+start:1566470995 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566470996 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566470998 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566471002 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566471010 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566471026 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566471058 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566471122 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566471250 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566471506 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566472018 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566473042 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566475090 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566479186 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566487378 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566503762 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566536530 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566602066 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566733138 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1566995282 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1567519570 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1568568146 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1570665298 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1574859602 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1583248210 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1600025426 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1633579858 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1700688722 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1834906450 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:2103341906 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:492729170 node-key:705743297 node-url:rmi://MSI:1099/node07
+
+---Node 1:---
+start:869706604 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869706605 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869706607 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869706611 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869706619 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869706635 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869706667 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869706731 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869706859 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869707115 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869707627 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869708651 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869710699 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869714795 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869722987 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869739371 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869772139 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869837675 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:869968747 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:870230891 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:870755179 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:871803755 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:873900907 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:878095211 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:886483819 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:903261035 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:936815467 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:1003924331 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:1138142059 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:1406577515 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:1943448427 node-key:1566470994 node-url:rmi://MSI:1099/node00
+
+---Node 2:---
+start:263692002 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263692003 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263692005 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263692009 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263692017 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263692033 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263692065 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263692129 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263692257 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263692513 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263693025 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263694049 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263696097 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263700193 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263708385 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263724769 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263757537 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263823073 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:263954145 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:264216289 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:264740577 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:265789153 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:267886305 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:272080609 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:280469217 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:297246433 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:330800865 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:397909729 node-key:483083110 node-url:rmi://MSI:1099/node03
+start:532127457 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:800562913 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:1337433825 node-key:1441374763 node-url:rmi://MSI:1099/node05
+
+---Node 3:---
+start:483083111 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483083112 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483083114 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483083118 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483083126 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483083142 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483083174 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483083238 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483083366 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483083622 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483084134 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483085158 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483087206 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483091302 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483099494 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483115878 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483148646 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483214182 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483345254 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:483607398 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:484131686 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:485180262 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:487277414 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:491471718 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:499860326 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:516637542 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:550191974 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:617300838 node-key:705743297 node-url:rmi://MSI:1099/node07
+start:751518566 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:1019954022 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:1556824934 node-key:1566470994 node-url:rmi://MSI:1099/node00
+
+---Node 4:---
+start:713981617 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713981618 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713981620 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713981624 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713981632 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713981648 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713981680 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713981744 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713981872 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713982128 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713982640 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713983664 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713985712 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713989808 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:713998000 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:714014384 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:714047152 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:714112688 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:714243760 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:714505904 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:715030192 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:716078768 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:718175920 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:722370224 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:730758832 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:747536048 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:781090480 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:848199344 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:982417072 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:1250852528 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:1787723440 node-key:1823638113 node-url:rmi://MSI:1099/node06
+
+---Node 5:---
+start:1441374764 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441374765 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441374767 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441374771 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441374779 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441374795 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441374827 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441374891 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441375019 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441375275 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441375787 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441376811 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441378859 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441382955 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441391147 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441407531 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441440299 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441505835 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441636907 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1441899051 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1442423339 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1443471915 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1445569067 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1449763371 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1458151979 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1474929195 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1508483627 node-key:1566470994 node-url:rmi://MSI:1099/node00
+start:1575592491 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1709810219 node-key:1823638113 node-url:rmi://MSI:1099/node06
+start:1978245675 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:367632939 node-key:483083110 node-url:rmi://MSI:1099/node03
+
+---Node 6:---
+start:1823638114 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823638115 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823638117 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823638121 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823638129 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823638145 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823638177 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823638241 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823638369 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823638625 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823639137 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823640161 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823642209 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823646305 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823654497 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823670881 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823703649 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823769185 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1823900257 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1824162401 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1824686689 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1825735265 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1827832417 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1832026721 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1840415329 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1857192545 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1890746977 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:1957855841 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:2092073569 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:213025377 node-key:263692001 node-url:rmi://MSI:1099/node02
+start:749896289 node-key:869706603 node-url:rmi://MSI:1099/node01
+
+---Node 7:---
+start:705743298 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705743299 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705743301 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705743305 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705743313 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705743329 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705743361 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705743425 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705743553 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705743809 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705744321 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705745345 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705747393 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705751489 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705759681 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705776065 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705808833 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:705874369 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:706005441 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:706267585 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:706791873 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:707840449 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:709937601 node-key:713981616 node-url:rmi://MSI:1099/node04
+start:714131905 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:722520513 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:739297729 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:772852161 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:839961025 node-key:869706603 node-url:rmi://MSI:1099/node01
+start:974178753 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:1242614209 node-key:1441374763 node-url:rmi://MSI:1099/node05
+start:1779485121 node-key:1823638113 node-url:rmi://MSI:1099/node06
+
+----------------------------------------------------------------------------
+Total words is 196
+Printing Dictionary Tables...
+
+---Node 0:---
+jump:a sudden movement
+fascinate:attract, enchant
+disaffection:dislike, hostility, disgust
+inquisitive:curious to know
+outing:a pleasure trip
+ebb:decay, flow back
+clamp:a device to hold things together
+incurious:uninteresting, careless
+bail:one who gives security 
+papyrus:a seed once used to make paper
+ebony:a kind of hard black wood
+aegis:shield, protection
+Number of entries is: 12
+
+---Node 1:---
+flimsy:thin, weak, easily, weak
+fanfare:loud blowing of trumpets
+larynx:the organ of voice
+clandestine:concealed, hidden
+proclivity:a tendency, leaning towards something, inclination
+bald:without hair, bare
+adze:tool for cutting away surface of wood
+bale:a package, misery
+duly:properly, at the right time
+enclave:region surrounded by foreign country 
+decay:decomposition, declination
+offence:illegal act, insult, crime
+disable:make unfit, cripple
+declamation:set speech in fine language
+reck:to care for
+coil:a rope which has been wound or gathered in rings
+Number of entries is: 16
+
+---Node 2:---
+taper:make smaller towards and end
+erasure:rubber, what has been rubbed out
+clergy:the ministers of the Christian religion
+upright:honest, erect
+wilful:obstinate, fond of having one's own way
+ignorance:lack of knowledge, not educated 
+adversary:an enemy
+fallible:imperfect, liable to make mistakes
+hem:border, margin, edge
+plumage:bird, feathers
+outhouse:a small building near the residence
+invulnerable:not able to be wounded or hurt
+recite:narrate, to repeat from memory
+incredulous:refusing to believe
+broil:cook in fire
+collar:neck band
+ductile:yielding, flexible, malleable
+wane:decline, decrease
+tuck:gather up or roll
+affluence:abundance, wealth
+hound:hunting dog
+erode:eat away gradually
+coerce:compel
+jurist:one learned in law
+insight:knowledge, intuition
+juvenile:youthful
+endear:to make dear 
+staunch:loyal, steadfast
+landholder:owner of a land
+inquiry:investigation
+empower:give power to 
+bairn:child
+student:a person who studies something
+anonymous:without a name
+debase:make lower in value, degrade
+jurisprudence:the science of law
+acquit:set free, conduct well
+insidious:cunning, doing harm secretly
+suavity:agreeableness, pleasantness
+benevolent:generous, kindly, charitable
+colloquy:a conversation
+answer:a reply, a solution 
+adverb:word that modifies a verb
+edible:eatable
+bewail:lament
+card:comb wool etc
+malign:slander, abuse
+winsome:agreeable, attractive, engaging
+lascar:an Indian sailor
+beverage:a drink
+jute:the coarse fibre of an Indian plant
+codify:edit, arrange systematically
+disclaim:disown, give up all claims
+familiarize:accustom, make well known
+Number of entries is: 54
+
+---Node 3:---
+concoct:fabricate, make up, scheme
+duke:a sovereign, prince, a noble
+wallaby:a small kangaroo
+hern:a long-legged
+debacle:sudden collapse
+espirit:shrewdness
+lambent:flickering
+destitute:needy, helpless
+affront:an insult
+cohesion:sticking together
+parcel:divide, pack up in to parcels
+spasmodic:occurring irregularly
+mail:armour post
+loaf:mass of bread
+encamp:live in camp, rest 
+involve:include, entangle
+decide:settle, determine, give, judgement
+maiden:pure, unused, first
+decease:death
+condone:pardon
+lobby:talk to win favour
+brunt:the force of the blow
+aerate:combine with air
+bestead:help, relive, avail
+ecstasy:great joy, mad delight, rapture
+Number of entries is: 25
+
+---Node 4:---
+Number of entries is: 0
+
+---Node 5:---
+expatiate:speak or write in detail
+concomitant:accompanying, resulting
+detach:separate, unfasten
+goose:a web-footed swimming bird like the duck
+deck:the upper floor or covering of a ship
+misconstrue:misjudge, give a wrong meaning
+heretic:sectary, dissenter 
+accoutre:to furnish with dress and trappings (esp. a warrior)
+desultory:inconstant, hasty, unsettled
+offal:refuse, waste
+debar:exclude, prevent
+henpecked:meekly, submissive to wife
+lassitude:tiredness
+lambative:a medicine to be licked
+ideology:system of ideas manner of thinking
+glutton:one who eats to excess, a great lover of reading books
+pod:seed-case of leguminous plants, cocoons of silkworms
+gynarchy:rule by a female
+dryad:wood-nymph
+flash:give light, come suddenly
+iconoclast:a breaker of idols
+slovenly:negligent, untidy, disorderly
+myopia:short sight
+flay:strip, skin, peel
+spite:tease, annoy, show ill-feeling towards
+tomboy:a girl who plays boy's games
+trowel:a flat-bladed implement
+junction:a meeting place(especially) where lines of railway meet
+buff:thick strong velvety leather, a light yellow colour
+clan:a tribe
+parish:a district under the care of a parson
+benight:overtake by night 
+flaunt:display, flutter
+horde:a wandering tribe, a multitude
+destiny:fate, decree
+litigation:a law suit, contention
+clever:skilful
+broke:past tense of BREAK
+talisman:something, considered to bring luck, charm
+goblin:demon, an evil spirit
+nominee:one nominated
+flog:beat with a whip or rod
+coeducation:education imparted for both sexes together
+backgammon:a game
+concession:rebate, favour, act of conceding
+escort:body-guard on a journey
+Number of entries is: 46
+
+---Node 6:---
+conch:a spiral shell
+nonage:minority
+horseplay:touch handling
+equine:pertaining to a horse, horse-like
+wager:that which is waged or pledged, a bet
+career:a profession
+gullible:capable of being deceived
+slush:partly melted snow, soft mud
+gunny:a coarse kind of sacking woven form jute
+carriage:conveyance, a vehicle for carrying
+elaborate:to explain fully
+impinge:to impel, collide
+indelicate:not delicate, immodest
+myth:traditional story, religious legend
+affable:pleasant, easy to speak to
+landgravine:a German Countess
+pluck:spirit, courage
+zealous:ardent, enthusiastic
+bet:lay a wager
+untoward:crass, awkward, vexatious
+zymotic:relating to or produced by fermentation
+guise:appearance, dress
+collude:work together secretly
+Number of entries is: 23
+
+---Node 7:---
+inroad:raid, any illegal encroachment
+myriad:very great number, thousand
+icicle:hanging piece of ice
+imposition:act of imposing, that which is imposed
+carpet:a thick woven covering for the floor, rug
+imperial:pertaining to an empire or its ruler
+discomfort:inconvenience
+lodestone:a magnetic ore of iron
+indemnify:to compensate of loss or damage, free responsibility
+herbivorous:herb-eating
+expunge:remove
+another:one more, different
+torchbearer:one who carries a torch, a leader
+eschew:to avoid, to shun
+outspoken:candid, frank
+eject:expel, emit
+eclectic:selecting the best
+lancet:double-edged surgical knife
+litre:a liquid measure equivalent to 1000 CC.
+insoluble:that cannot be dissolved 
+Number of entries is: 20
