@@ -1,5 +1,7 @@
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.MalformedURLException;
+import java.net.UnknownHostException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -31,7 +33,7 @@ public class Client {
 		boolean exitLoop = false;
 		while(!exitLoop) {
 			Scanner scan = new Scanner(System.in);
-		    System.out.println("Enter 1 to lookup, 2 to exit");
+		    System.out.println("Enter 1 to lookup, 2 to exit, 3 print tables");
 		    System.out.println("Enter your choice: ");
 
 		    int option = Integer.parseInt(scan.nextLine());
@@ -39,14 +41,28 @@ public class Client {
 		    	System.out.println("Exiting...");
 		    	exitLoop = true;
 		    	scan.close();
-		    }
-		    else if(option == 1) {
+		    } else if(option == 1) {
 		    	System.out.println("Enter a word to query: ");
 		    	String queryWord = scan.nextLine();
-		    	String result = "NOT FOUND";//client.wordLookup(queryWord); 
+		    	String result = client.wordLookup(queryWord); 
 		    	System.out.println(String.format("Result: %s", result));
+		    } else if (option == 3) {
+		    	System.out.println("Enter a node id to query: ");
+		    	int queryWord = Integer.parseInt(scan.nextLine());
+		    	String result = client.printDictionary(queryWord); 
+		    	System.out.println(String.format("Dictionary table:\n  %s ", result));
 		    }
 		}
+	}
+	
+	private String printDictionary(int queryWord) throws RemoteException, UnknownHostException {
+		String rmiUrlFormat = String.format("%s:%s/%s", 
+				InetAddress.getLocalHost().getHostName(),
+				Constants.RMI_PORT, 
+				Constants.RMI_SERVER_NAME);
+		String nodeURL = String.format(rmiUrlFormat, queryWord);
+		Node node = initConnection(nodeURL);
+		return node.printDictionary();
 	}
 
 	private static void configureLogger() throws SecurityException, IOException {
@@ -57,15 +73,16 @@ public class Client {
 		fh.setFormatter(formatter);
 	}
 	
-	public Client(String nodeURL) {
+	public Client(String nodeURL) throws UnknownHostException {
 		super();
+		System.setProperty("java.security.policy","file:./security.policy");
+		System.setProperty("java.rmi.server.hostname", InetAddress.getLocalHost().getHostName());
+        System.setSecurityManager(new SecurityManager());
 		this.node = initConnection(nodeURL);
 	}
 
 	private Node initConnection(String nodeURL) {
-		System.setProperty("java.security.policy","file:./security.policy");
-        System.setSecurityManager(new SecurityManager());
-        
+		
 		try {
 			// Getting Server stub from RMI registry.
 			Node chordServer = (Node) Naming.lookup(String.format("rmi://%s", nodeURL));
@@ -86,4 +103,6 @@ public class Client {
 		}
 		return Constants.NOT_FOUND;
 	}
+	
+
 }

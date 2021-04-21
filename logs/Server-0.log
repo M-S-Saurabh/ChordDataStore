@@ -1,3 +1,656 @@
-nodeURL is: rmi://MSI:1099/node00
+nodeURL is: rmi://LAPTOP-CSNHLNIB:1099/node00
 Hash for this serverName is: 502500203
 Using the supplied RMI registry port: 1099
+rmi://LAPTOP-CSNHLNIB:1099/node01 is trying to aquire join lock
+rmi://LAPTOP-CSNHLNIB:1099/node01 join lock acquired
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277823
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277823
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277824
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277824
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277826
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277826
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277830
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277830
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277838
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277838
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277854
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277854
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277886
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277886
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277950
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519277950
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519278078
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519278078
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519278334
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519278334
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519278846
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519278846
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519279870
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519279870
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519281918
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519281918
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519286014
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519286014
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519294206
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519294206
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519310590
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519310590
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519343358
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519343358
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519408894
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519408894
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519539966
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519539966
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519802110
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 519802110
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 520326398
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 520326398
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 521374974
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 521374974
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 523472126
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 523472126
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 527666430
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 527666430
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055038
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055038
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552832254
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552832254
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 586386686
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 586386686
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 653495550
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 653495550
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 787713278
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 787713278
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1056148734
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1056148734
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1593019646
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1593019646
+rmi://LAPTOP-CSNHLNIB:1099/node01 is releasing the join lock
+rmi://LAPTOP-CSNHLNIB:1099/node02 is trying to aquire join lock
+rmi://LAPTOP-CSNHLNIB:1099/node02 join lock acquired
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055442
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055442
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055443
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055443
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055445
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055445
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055449
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055449
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055457
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055457
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055473
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055473
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055505
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055505
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055569
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055569
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055697
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055697
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055953
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536055953
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536056465
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536056465
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536057489
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536057489
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536059537
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536059537
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536063633
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536063633
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536071825
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536071825
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536088209
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536088209
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536120977
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536120977
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536186513
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536186513
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536317585
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536317585
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536579729
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536579729
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 537104017
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 537104017
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 538152593
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 538152593
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 540249745
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 540249745
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 544444049
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 544444049
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552832657
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552832657
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 569609873
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 569609873
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 603164305
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 603164305
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 670273169
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 670273169
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 804490897
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 804490897
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1072926353
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1072926353
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1609797265
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1609797265
+rmi://LAPTOP-CSNHLNIB:1099/node02 is releasing the join lock
+rmi://LAPTOP-CSNHLNIB:1099/node03 is trying to aquire join lock
+rmi://LAPTOP-CSNHLNIB:1099/node03 join lock acquired
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833061
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833061
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833062
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833062
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833064
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833064
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833068
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833068
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833076
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833076
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833092
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833092
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833124
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833124
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833188
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833188
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833316
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833316
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833572
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552833572
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552834084
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552834084
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552835108
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552835108
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552837156
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552837156
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552841252
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552841252
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552849444
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552849444
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552865828
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552865828
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552898596
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552898596
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552964132
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 552964132
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 553095204
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 553095204
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 553357348
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 553357348
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 553881636
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 553881636
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 554930212
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 554930212
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 557027364
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 557027364
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 561221668
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 561221668
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 569610276
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 569610276
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 586387492
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 586387492
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 619941924
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 619941924
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 687050788
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 687050788
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 821268516
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 821268516
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1089703972
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1089703972
+find sucessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1626574884
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1626574884
+rmi://LAPTOP-CSNHLNIB:1099/node03 is releasing the join lock
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1926879790
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 588734996
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2071979553
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1100255267
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 200675650
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 200675650
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2117451917
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 161745152
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 161745152
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 798503001
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1443814732
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 339384881
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 339384881
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 389536215
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 389536215
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1734978560
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 53375528
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 53375528
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1249803663
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1520180009
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 179312795
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 179312795
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 747570892
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 764348511
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1891063905
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1185674694
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 319370707
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 319370707
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1622040604
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1903723604
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2618183
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 2618183
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 244376075
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 244376075
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 965519502
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 414699834
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 414699834
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1244307660
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2010687137
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1648110459
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 570346926
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1716829285
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1473315652
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1092942429
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 727861241
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 103752539
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 103752539
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1283536058
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 4606817
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 4606817
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1368124049
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 291248289
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 291248289
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 733148878
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 93305304
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 93305304
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2067289152
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 171801113
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 171801113
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1581103209
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 985198363
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1780954544
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 397089826
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 397089826
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1098105258
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 364747081
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 364747081
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 480078301
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 480078301
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1429425171
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1908336255
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 753539747
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 266147935
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 266147935
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 300477663
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 300477663
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1428513624
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1066007642
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1213057714
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 753722816
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1286996043
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 291862444
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 291862444
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 840070045
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1449084040
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 79298791
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 79298791
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 632801499
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1357966059
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 28989673
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 28989673
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 381287526
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 381287526
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 850222215
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1550862988
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1489916846
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 536550727
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 326956313
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 326956313
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 89399900
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 89399900
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 555980810
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1576618502
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2037162760
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 797876017
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2042874866
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 418862075
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 418862075
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1577029256
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1921674448
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 27242552
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 27242552
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 703681802
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 404067665
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 404067665
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1166138443
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1378294636
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 688455725
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1940688992
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2030068600
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 767048930
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1481730739
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1350193879
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 970075255
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1008029111
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 852050713
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1379402395
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1407514556
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 936399230
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1029175880
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1578212572
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1730335137
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1608686408
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 907726084
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 196391361
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 196391361
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 983447420
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 561024683
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1117849795
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 440097478
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 440097478
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 883278079
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1783038232
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 236923043
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 236923043
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 588922006
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 890325486
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1264220495
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2055384463
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 619313796
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1610536722
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 492182232
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 492182232
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 244773636
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 244773636
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1489253756
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1767249185
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 597443456
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 205196430
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 205196430
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1524344127
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 661796796
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2003984542
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 177915029
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 177915029
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 639481744
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 376762806
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 376762806
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1927465506
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1489019891
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1415128499
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2131702642
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 110063982
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 110063982
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2116638003
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1886872429
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1254948342
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 389309510
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 389309510
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 677251920
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1644267344
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 126894278
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 126894278
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 841189321
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2797905
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 2797905
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1166008281
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1196510191
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 501983179
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 501983179
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 487987028
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 487987028
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 469281085
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 469281085
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 475664083
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 475664083
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 390898267
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 390898267
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 326048466
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 326048466
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1921848773
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1187916389
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1201332934
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 689296581
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1708793417
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1042038340
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1675356737
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1009827929
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 757929601
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 252364297
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 252364297
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1495328985
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 644513515
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1448098809
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 329362192
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 329362192
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1348084264
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1687707798
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 247917094
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 247917094
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1160989932
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 751665920
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 58217637
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 58217637
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 807132538
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1279258459
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1707679414
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 269514502
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 269514502
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 871961734
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1915784131
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 3223840
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 3223840
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2131583170
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1245724770
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 178154389
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 178154389
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1159873873
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 488580292
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 488580292
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1175282504
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1910047512
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1758246851
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1977411490
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1781762719
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 299765095
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 299765095
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2049701484
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1960103942
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 56234179
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 56234179
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1576931082
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1732028424
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2071979553
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1926879790
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1960103942
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 389309510
+rmi://LAPTOP-CSNHLNIB:1099/node00 closest preceding finger for key: 389309510
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 2128831035
+find predecessor by: rmi://LAPTOP-CSNHLNIB:1099/node00 for start: 1489019891
+------Printing Local Dictionary----
+hound:hunting dog
+involve:include, entangle
+reck:to care for
+clamp:a device to hold things together
+staunch:loyal, steadfast
+familiarize:accustom, make well known
+plumage:bird, feathers
+concoct:fabricate, make up, scheme
+adze:tool for cutting away surface of wood
+pluck:spirit, courage
+career:a profession
+jurist:one learned in law
+deck:the upper floor or covering of a ship
+encamp:live in camp, rest 
+flay:strip, skin, peel
+horseplay:touch handling
+clandestine:concealed, hidden
+goose:a web-footed swimming bird like the duck
+accoutre:to furnish with dress and trappings (esp. a warrior)
+decide:settle, determine, give, judgement
+adversary:an enemy
+fanfare:loud blowing of trumpets
+ecstasy:great joy, mad delight, rapture
+nonage:minority
+zymotic:relating to or produced by fermentation
+equine:pertaining to a horse, horse-like
+ignorance:lack of knowledge, not educated 
+beverage:a drink
+outspoken:candid, frank
+flog:beat with a whip or rod
+torchbearer:one who carries a torch, a leader
+bald:without hair, bare
+conch:a spiral shell
+lascar:an Indian sailor
+bale:a package, misery
+misconstrue:misjudge, give a wrong meaning
+codify:edit, arrange systematically
+answer:a reply, a solution 
+herbivorous:herb-eating
+slush:partly melted snow, soft mud
+destiny:fate, decree
+taper:make smaller towards and end
+decease:death
+cohesion:sticking together
+expunge:remove
+elaborate:to explain fully
+dryad:wood-nymph
+wilful:obstinate, fond of having one's own way
+gynarchy:rule by a female
+concomitant:accompanying, resulting
+broil:cook in fire
+loaf:mass of bread
+coerce:compel
+debacle:sudden collapse
+trowel:a flat-bladed implement
+eject:expel, emit
+litre:a liquid measure equivalent to 1000 CC.
+detach:separate, unfasten
+jute:the coarse fibre of an Indian plant
+offal:refuse, waste
+nominee:one nominated
+backgammon:a game
+spite:tease, annoy, show ill-feeling towards
+pod:seed-case of leguminous plants, cocoons of silkworms
+fallible:imperfect, liable to make mistakes
+disaffection:dislike, hostility, disgust
+anonymous:without a name
+upright:honest, erect
+goblin:demon, an evil spirit
+henpecked:meekly, submissive to wife
+winsome:agreeable, attractive, engaging
+ductile:yielding, flexible, malleable
+landholder:owner of a land
+indelicate:not delicate, immodest
+edible:eatable
+flash:give light, come suddenly
+espirit:shrewdness
+lambative:a medicine to be licked
+iconoclast:a breaker of idols
+imperial:pertaining to an empire or its ruler
+debar:exclude, prevent
+wallaby:a small kangaroo
+disclaim:disown, give up all claims
+broke:past tense of BREAK
+bet:lay a wager
+coeducation:education imparted for both sexes together
+eschew:to avoid, to shun
+offence:illegal act, insult, crime
+concession:rebate, favour, act of conceding
+destitute:needy, helpless
+inquisitive:curious to know
+hern:a long-legged
+imposition:act of imposing, that which is imposed
+heretic:sectary, dissenter 
+hem:border, margin, edge
+erasure:rubber, what has been rubbed out
+juvenile:youthful
+another:one more, different
+card:comb wool etc
+suavity:agreeableness, pleasantness
+gullible:capable of being deceived
+debase:make lower in value, degrade
+wager:that which is waged or pledged, a bet
+carriage:conveyance, a vehicle for carrying
+fascinate:attract, enchant
+landgravine:a German Countess
+incurious:uninteresting, careless
+disable:make unfit, cripple
+inquiry:investigation
+declamation:set speech in fine language
+icicle:hanging piece of ice
+lambent:flickering
+collar:neck band
+flimsy:thin, weak, easily, weak
+lobby:talk to win favour
+affable:pleasant, easy to speak to
+mail:armour post
+affluence:abundance, wealth
+adverb:word that modifies a verb
+expatiate:speak or write in detail
+lancet:double-edged surgical knife
+benight:overtake by night 
+lodestone:a magnetic ore of iron
+bairn:child
+colloquy:a conversation
+discomfort:inconvenience
+collude:work together secretly
+ebb:decay, flow back
+bewail:lament
+clever:skilful
+larynx:the organ of voice
+parcel:divide, pack up in to parcels
+myth:traditional story, religious legend
+carpet:a thick woven covering for the floor, rug
+erode:eat away gradually
+insoluble:that cannot be dissolved 
+benevolent:generous, kindly, charitable
+condone:pardon
+ideology:system of ideas manner of thinking
+enclave:region surrounded by foreign country 
+horde:a wandering tribe, a multitude
+clan:a tribe
+affront:an insult
+impinge:to impel, collide
+student:a person who studies something
+slovenly:negligent, untidy, disorderly
+papyrus:a seed once used to make paper
+aegis:shield, protection
+brunt:the force of the blow
+jump:a sudden movement
+glutton:one who eats to excess, a great lover of reading books
+guise:appearance, dress
+tuck:gather up or roll
+spasmodic:occurring irregularly
+myopia:short sight
+recite:narrate, to repeat from memory
+clergy:the ministers of the Christian religion
+talisman:something, considered to bring luck, charm
+wane:decline, decrease
+empower:give power to 
+incredulous:refusing to believe
+outhouse:a small building near the residence
+acquit:set free, conduct well
+desultory:inconstant, hasty, unsettled
+untoward:crass, awkward, vexatious
+parish:a district under the care of a parson
+insight:knowledge, intuition
+duke:a sovereign, prince, a noble
+aerate:combine with air
+coil:a rope which has been wound or gathered in rings
+indemnify:to compensate of loss or damage, free responsibility
+buff:thick strong velvety leather, a light yellow colour
+eclectic:selecting the best
+outing:a pleasure trip
+junction:a meeting place(especially) where lines of railway meet
+decay:decomposition, declination
+maiden:pure, unused, first
+inroad:raid, any illegal encroachment
+myriad:very great number, thousand
+endear:to make dear 
+gunny:a coarse kind of sacking woven form jute
+zealous:ardent, enthusiastic
+litigation:a law suit, contention
+flaunt:display, flutter
+bail:one who gives security 
+insidious:cunning, doing harm secretly
+malign:slander, abuse
+jurisprudence:the science of law
+lassitude:tiredness
+duly:properly, at the right time
+proclivity:a tendency, leaning towards something, inclination
+bestead:help, relive, avail
+tomboy:a girl who plays boy's games
+ebony:a kind of hard black wood
+invulnerable:not able to be wounded or hurt
+escort:body-guard on a journey
+

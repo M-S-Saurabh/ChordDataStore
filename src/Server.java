@@ -150,7 +150,7 @@ public class Server extends UnicastRemoteObject implements Node {
 		//logger.finer("find sucessor by: "+this.nodeURL+ " for start: "+key);
 		Node n1 = this.findPredecessor(key);
 		return n1.successor();
-	}
+	}   
 
 	@Override
 	public Node findPredecessor(int key) throws RemoteException {
@@ -158,10 +158,30 @@ public class Server extends UnicastRemoteObject implements Node {
 		//logger.finer("find predecessor by: "+this.nodeURL+ " for start: "+key);
 
 		Node n1 = this;
-		while (key <= n1.getNodeId() || key > n1.successor().getNodeId()) {
+		int upperLimit = 0;
+		if (n1.successor().getNodeURL().endsWith("node00")) {
+			upperLimit = Integer.MAX_VALUE;
+		} else {
+			upperLimit = n1.successor().getNodeId();
+		}
+		
+		while (key <=  n1.getNodeId() || key > upperLimit) {
+			Node oldN1 = n1;
+			
 			n1 = n1.closestPrecedingFinger(key);
+			
+			if (oldN1.getNodeId() == n1.getNodeId()) {
+				return n1;
+			}
+			
+			if (n1.successor().getNodeURL().endsWith("node00")) {
+				upperLimit = Integer.MAX_VALUE;
+			} else {
+				upperLimit = n1.successor().getNodeId();
+			}
 		}
 		return n1;
+
 	}
 
 	@Override
@@ -169,6 +189,11 @@ public class Server extends UnicastRemoteObject implements Node {
 		logger.info(this.nodeURL+" closest preceding finger for key: "+key);
 		//logger.finer(this.nodeURL+" closest preceding finger for key: "+key);
 		for(int i=m; i>0; i--) {
+			if (this.nodeId == key && finger.get(i).node.getNodeId() != this.getNodeId()) {
+				String temp = finger.get(i).node.getNodeURL();
+				return this.finger.get(i).node;
+			}
+			
 			if(this.nodeId < this.finger.get(i).node.getNodeId() 
 					&& this.finger.get(i).node.getNodeId() < key) {
 				return this.finger.get(i).node;
@@ -208,7 +233,7 @@ public class Server extends UnicastRemoteObject implements Node {
 		logger.info(nodeURL+" is releasing the join lock");
 		//logger.finer(nodeURL+" is trying is releasing the join lock");
 		this.joiningURL = "";
-		notifyAll();
+		notify();
 		return true; 
 	}
 	
@@ -234,10 +259,14 @@ public class Server extends UnicastRemoteObject implements Node {
 		this.successor().setPredecessor(this); // implicit RMI call @_@
 		logger.info("setting up the fingers for: "+this.nodeURL);
 		for (int i=1; i<m; i++) {
-			if(this.nodeId < finger.get(i+1).start 
-					&& finger.get(i+1).start <= finger.get(i+1).node.getNodeId()) {
+			if (i == 30) {
+				String a = "hellp";
+			}
+			Node tempNode = finger.get(i+1).node;
+			if (this.nodeId < finger.get(i+1).start 
+					&& finger.get(i+1).start <= finger.get(i).node.getNodeId()) {
 				finger.get(i+1).node = finger.get(i).node;
-			}else {
+			} else {
 				finger.get(i+1).node = node0.findSuccessor(finger.get(i+1).start, traceFlag);
 			}
 		}

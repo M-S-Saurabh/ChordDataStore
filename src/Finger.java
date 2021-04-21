@@ -6,7 +6,7 @@ public class Finger {
 	
 	public Finger(int n, int k) {
 		int m = Constants.KEY_BITS;
-		this.start = (n + (1 << (k-1))) % m;
-		this.stop = (n + (1 << k)) % m;
+		this.start = (n % (1<<m) + (1 << (k-1)) % (1<<m)) % (1<<m);
+		this.stop = (n % (1<<m) + (1 << k) % (1<<m)) % (1<<m);
 	}
 }
