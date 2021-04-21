@@ -193,34 +193,8 @@ public class Server extends UnicastRemoteObject implements Node {
                 normalInterval = 0;
             else normalInterval = 1;
         }
-        //System.out.println("Returning n" + n.getID());
 
         return n;
-
-//		Node n1 = this;
-//		int upperLimit = 0;
-//		if (n1.successor().getNodeURL().endsWith("node00")) {
-//			upperLimit = Integer.MAX_VALUE;
-//		} else {
-//			upperLimit = n1.successor().getNodeId();
-//		}
-//		
-//		while (key <=  n1.getNodeId() || key > upperLimit) {
-//			Node oldN1 = n1;
-//			
-//			n1 = n1.closestPrecedingFinger(key);
-//			
-//			if (oldN1.getNodeId() == n1.getNodeId()) {
-//				return n1;
-//			}
-//			
-//			if (n1.successor().getNodeURL().endsWith("node00")) {
-//				upperLimit = Integer.MAX_VALUE;
-//			} else {
-//				upperLimit = n1.successor().getNodeId();
-//			}
-//		}
-//		return n1;
 
 	}
 
@@ -244,16 +218,6 @@ public class Server extends UnicastRemoteObject implements Node {
                 if (nodeID > myID || nodeID < key) 
                     return finger.get(i).node;
             }
-			
-//			if (this.nodeId == key && finger.get(i).node.getNodeId() != this.getNodeId()) {
-//				String temp = finger.get(i).node.getNodeURL();
-//				return this.finger.get(i).node;
-//			}
-//			
-//			if(this.nodeId < this.finger.get(i).node.getNodeId() 
-//					&& this.finger.get(i).node.getNodeId() < key) {
-//				return this.finger.get(i).node;
-//			}
 		}
 		return this;
 	}
@@ -294,18 +258,11 @@ public class Server extends UnicastRemoteObject implements Node {
 	}
 	
 	private void joinProcess(Node node0) throws RemoteException {
-		//if (n1 != null) {
-			this.nodeId = node0.generateNodeId();
-			logger.info("Node ID for this server is: "+this.nodeId);
-			this.createFingerTable();
-			initFingerTable(node0);
-			updateOthers();
-		///} else { called direclty for node0
-		//	for(int i=1; i<=m; i++) {
-		//		this.finger.get(i).node = this;
-		//	}
-		//	this.predecessorNode = this;
-		//}
+		this.nodeId = node0.generateNodeId();
+		logger.info("Node ID for this server is: "+this.nodeId);
+		this.createFingerTable();
+		initFingerTable(node0);
+		updateOthers();
 	}
 
 	// This function is originally called init_finger_table in the paper.
@@ -362,11 +319,6 @@ public class Server extends UnicastRemoteObject implements Node {
 	
 	@Override
 	public void updateFingerTable(Node s, int i) throws RemoteException {
-//		if( finger.get(i).start <= s.getNodeId() && s.getNodeId() < finger.get(i).node.getNodeId()) {
-//			finger.get(i).node = s;
-//			Node p = predecessor();
-//			p.updateFingerTable(s, i);
-//		}
 		Node p;
         int normalInterval = 1;
         int myID = this.nodeId;
@@ -374,8 +326,6 @@ public class Server extends UnicastRemoteObject implements Node {
         if (myID >= nextID) 
             normalInterval = 0;
         else normalInterval = 1;
-
-        //System.out.println("here!" + s.getID() + " between " + myID + " and " + nextID);
 
         if ( ((normalInterval==1 && (s.getNodeId() >= myID && s.getNodeId() < nextID)) ||
         		(normalInterval==0 && (s.getNodeId() >= myID || s.getNodeId() < nextID)))
