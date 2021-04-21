@@ -5,6 +5,7 @@ import java.net.UnknownHostException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -22,13 +23,13 @@ public class Client {
 	private Node node;
 
 	public static void main(String[] args) throws SecurityException, IOException {
-		if(args.length != 1) {
-			throw new RuntimeException("Syntax: java Client <Node URL>");
+		if(args.length != 2) {
+			throw new RuntimeException("Syntax: java Client <Node URL> <NumNodes>");
 		}
 		// Setting up logger.
 		configureLogger();
 		
-		Client client = new Client(args[0]);
+		Client client = new Client(args[0], Integer.parseInt(args[1]));
 		
 		boolean exitLoop = false;
 		while(!exitLoop) {
@@ -73,12 +74,14 @@ public class Client {
 		fh.setFormatter(formatter);
 	}
 	
-	public Client(String nodeURL) throws UnknownHostException {
+	public Client(String nodeURL, int numNodes) throws UnknownHostException, RemoteException {
 		super();
 		System.setProperty("java.security.policy","file:./security.policy");
 		System.setProperty("java.rmi.server.hostname", InetAddress.getLocalHost().getHostName());
         System.setSecurityManager(new SecurityManager());
 		this.node = initConnection(nodeURL);
+		
+		printTables( numNodes);
 	}
 
 	private Node initConnection(String nodeURL) {
@@ -104,5 +107,28 @@ public class Client {
 		return Constants.NOT_FOUND;
 	}
 	
-
+	private void printTables(int numNodes) throws UnknownHostException, RemoteException {
+		String rmiUrlFormat = String.format("%s:%s/%s", 
+				InetAddress.getLocalHost().getHostName(),
+				Constants.RMI_PORT, 
+				Constants.RMI_SERVER_NAME);
+		
+		ArrayList<Node> nodes = new ArrayList<Node>();
+		for(int i=0; i<numNodes; i++) {
+			String nodeURL = String.format(rmiUrlFormat, i);
+			nodes.add(initConnection(nodeURL));
+		}
+		
+		logger.info("Printing Finger Tables...");
+		for (int i=0; i<numNodes; i++) {
+			logger.info(String.format("---Node %d:---", i));
+			logger.info(nodes.get(i).printFingerTable());
+		}
+		
+		logger.info("Printing Dictionary Tables...");
+		for (int i=0; i<numNodes; i++) {
+			logger.info(String.format("---Node %d:---", i));
+			logger.info(nodes.get(i).printDictionary());
+		}
+	}
 }

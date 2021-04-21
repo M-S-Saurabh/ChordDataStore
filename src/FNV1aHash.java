@@ -26,8 +26,13 @@ public class FNV1aHash {
    }
 
    public static void main(String[] argv ) {
-      int hashval = hash32( argv[0]  );
-      System.out.println( "Hash value using hash32 is " + hashval );
+//      int hashval = hash32( argv[0]  );
+//      System.out.println( "Hash value using hash32 is " + hashval );
+	   for (int i=0; i<6; i++) {
+		   String nodeURL = String.format("node0%d", i);
+		   int hashVal = hash32(nodeURL);
+		   System.out.println("Hash value of "+nodeURL+" is "+hashVal);
+	   }
    }
 
 }

@@ -22,8 +22,11 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.Set;
+import java.util.Random;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -46,6 +49,8 @@ public class Server extends UnicastRemoteObject implements Node {
 	private Node predecessorNode;
 
 	private int m;
+	
+	private Set<Integer> usedIds;
 
 	public static void main(String[] args) throws AlreadyBoundException, SecurityException, IOException, InterruptedException {
 		if (args.length != 1) {
@@ -99,19 +104,18 @@ public class Server extends UnicastRemoteObject implements Node {
 		
 		this.m = Constants.KEY_BITS;
 		
-		this.nodeId = FNV1aHash.hash32(serverName);
-		logger.info("Hash for this serverName is: "+this.nodeId);
-		
-		this.createFingerTable();
-		
 		this.dictionary = new Hashtable<String, String>();
 		
 		if(serverId == 0) {
+			this.usedIds = new HashSet<Integer>();
+			this.nodeId = this.generateNodeId();
+			logger.info("Node ID for this server is: "+this.nodeId);
+			this.createFingerTable();
+			
 			for(int i=1; i<=m; i++) {
 				this.finger.get(i).node = this;
 			}
 			this.predecessorNode = this;
-			
 		} else {
 			this.connectToCluster(); // put in runnable ? 
 		}
@@ -143,6 +147,19 @@ public class Server extends UnicastRemoteObject implements Node {
 			e.printStackTrace();
 		}
 	}
+	
+	@Override
+	public int generateNodeId() throws RemoteException{
+		Random rand = new Random();
+		int upperBound = Integer.MAX_VALUE;
+		int randInt = rand.nextInt(upperBound);
+		while(this.usedIds.contains(randInt)) {
+			randInt = rand.nextInt(upperBound);
+		}
+		this.usedIds.add(randInt);
+		return randInt;
+	}
+
 
 	@Override
 	public Node findSuccessor(int key, boolean traceFlag) throws RemoteException {
@@ -156,31 +173,54 @@ public class Server extends UnicastRemoteObject implements Node {
 	public Node findPredecessor(int key) throws RemoteException {
 		logger.info("find predecessor by: "+this.nodeURL+ " for start: "+key);
 		//logger.finer("find predecessor by: "+this.nodeURL+ " for start: "+key);
-
-		Node n1 = this;
-		int upperLimit = 0;
-		if (n1.successor().getNodeURL().endsWith("node00")) {
-			upperLimit = Integer.MAX_VALUE;
-		} else {
-			upperLimit = n1.successor().getNodeId();
-		}
 		
-		while (key <=  n1.getNodeId() || key > upperLimit) {
-			Node oldN1 = n1;
-			
-			n1 = n1.closestPrecedingFinger(key);
-			
-			if (oldN1.getNodeId() == n1.getNodeId()) {
-				return n1;
-			}
-			
-			if (n1.successor().getNodeURL().endsWith("node00")) {
-				upperLimit = Integer.MAX_VALUE;
-			} else {
-				upperLimit = n1.successor().getNodeId();
-			}
-		}
-		return n1;
+		Node n = this;
+        int myID = n.getNodeId();
+        int succID = finger.get(1).node.getNodeId();
+        int normalInterval = 1;
+        if (myID >= succID)
+            normalInterval = 0;
+        
+        while ((normalInterval==1 && (key <= myID || key > succID)) ||
+                (normalInterval==0 && (key <= myID && key > succID))) {
+        	
+        	n = n.closestPrecedingFinger(key);
+
+            myID = n.getNodeId();
+            succID = n.successor().getNodeId();
+
+            if (myID >= succID) 
+                normalInterval = 0;
+            else normalInterval = 1;
+        }
+        //System.out.println("Returning n" + n.getID());
+
+        return n;
+
+//		Node n1 = this;
+//		int upperLimit = 0;
+//		if (n1.successor().getNodeURL().endsWith("node00")) {
+//			upperLimit = Integer.MAX_VALUE;
+//		} else {
+//			upperLimit = n1.successor().getNodeId();
+//		}
+//		
+//		while (key <=  n1.getNodeId() || key > upperLimit) {
+//			Node oldN1 = n1;
+//			
+//			n1 = n1.closestPrecedingFinger(key);
+//			
+//			if (oldN1.getNodeId() == n1.getNodeId()) {
+//				return n1;
+//			}
+//			
+//			if (n1.successor().getNodeURL().endsWith("node00")) {
+//				upperLimit = Integer.MAX_VALUE;
+//			} else {
+//				upperLimit = n1.successor().getNodeId();
+//			}
+//		}
+//		return n1;
 
 	}
 
@@ -188,16 +228,32 @@ public class Server extends UnicastRemoteObject implements Node {
 	public Node closestPrecedingFinger(int key) throws RemoteException {
 		logger.info(this.nodeURL+" closest preceding finger for key: "+key);
 		//logger.finer(this.nodeURL+" closest preceding finger for key: "+key);
+		
+		int normalInterval = 1;
+        int myID = this.nodeId;
+        if (myID >= key) {
+            normalInterval = 0;
+        }
+		
 		for(int i=m; i>0; i--) {
-			if (this.nodeId == key && finger.get(i).node.getNodeId() != this.getNodeId()) {
-				String temp = finger.get(i).node.getNodeURL();
-				return this.finger.get(i).node;
-			}
+			int nodeID = finger.get(i).node.getNodeId();
+            if (normalInterval == 1) {
+                if (nodeID > myID && nodeID < key) 
+                    return finger.get(i).node;
+            } else {
+                if (nodeID > myID || nodeID < key) 
+                    return finger.get(i).node;
+            }
 			
-			if(this.nodeId < this.finger.get(i).node.getNodeId() 
-					&& this.finger.get(i).node.getNodeId() < key) {
-				return this.finger.get(i).node;
-			}
+//			if (this.nodeId == key && finger.get(i).node.getNodeId() != this.getNodeId()) {
+//				String temp = finger.get(i).node.getNodeURL();
+//				return this.finger.get(i).node;
+//			}
+//			
+//			if(this.nodeId < this.finger.get(i).node.getNodeId() 
+//					&& this.finger.get(i).node.getNodeId() < key) {
+//				return this.finger.get(i).node;
+//			}
 		}
 		return this;
 	}
@@ -239,6 +295,9 @@ public class Server extends UnicastRemoteObject implements Node {
 	
 	private void joinProcess(Node node0) throws RemoteException {
 		//if (n1 != null) {
+			this.nodeId = node0.generateNodeId();
+			logger.info("Node ID for this server is: "+this.nodeId);
+			this.createFingerTable();
 			initFingerTable(node0);
 			updateOthers();
 		///} else { called direclty for node0
@@ -258,16 +317,33 @@ public class Server extends UnicastRemoteObject implements Node {
 		this.predecessorNode = this.successor().predecessor();
 		this.successor().setPredecessor(this); // implicit RMI call @_@
 		logger.info("setting up the fingers for: "+this.nodeURL);
+		
+		int normalInterval = 1;
 		for (int i=1; i<m; i++) {
-			if (i == 30) {
-				String a = "hellp";
-			}
-			Node tempNode = finger.get(i+1).node;
-			if (this.nodeId < finger.get(i+1).start 
-					&& finger.get(i+1).start <= finger.get(i).node.getNodeId()) {
+			int myId = this.nodeId;
+			int nextId = finger.get(i).node.getNodeId();
+			if(myId >= nextId)
+				normalInterval = 0;
+			else
+				normalInterval = 1;
+			
+			if ( (normalInterval == 1 && (myId <= finger.get(i+1).start && finger.get(i+1).start <= nextId))
+					|| (normalInterval == 0 && (myId <= finger.get(i+1).start || finger.get(i+1).start <= nextId) )
+			) {
 				finger.get(i+1).node = finger.get(i).node;
 			} else {
-				finger.get(i+1).node = node0.findSuccessor(finger.get(i+1).start, traceFlag);
+				Node s = node0.findSuccessor(finger.get(i+1).start, traceFlag);
+				
+//				int fiStart = finger.get(i+1).start;
+//				int succ = s.getNodeId();
+//				int fiSucc = finger.get(i+1).node.getNodeId();
+//				if (fiStart > succ) 
+//                    succ = succ + (1 << m);
+//				if (fiStart > fiSucc)
+//                    fiSucc = fiSucc + (1 << m);
+//				if ( fiStart <= succ && succ <= fiSucc ) {
+					finger.get(i+1).node = s;
+//				}
 			}
 		}
 		logger.info(this.nodeURL+" init table complete");
@@ -276,26 +352,47 @@ public class Server extends UnicastRemoteObject implements Node {
 	private void updateOthers() throws RemoteException {
 		int n = this.getNodeId();
 		for(int i=1; i<=m; i++) {
-			Node p = findPredecessor(n - (1 << (i-1)) + 1);
+			int id = n - (1 << (i-1)) + 1;
+			if (id < 0)
+				id += (1 << m);
+			Node p = findPredecessor(id);
 			p.updateFingerTable(this, i);
 		}
 	}
 	
 	@Override
 	public void updateFingerTable(Node s, int i) throws RemoteException {
-		if( finger.get(i).start <= s.getNodeId() && s.getNodeId() < finger.get(i).node.getNodeId()) {
-			finger.get(i).node = s;
-			Node p = predecessor();
-			p.updateFingerTable(s, i);
-		}
+//		if( finger.get(i).start <= s.getNodeId() && s.getNodeId() < finger.get(i).node.getNodeId()) {
+//			finger.get(i).node = s;
+//			Node p = predecessor();
+//			p.updateFingerTable(s, i);
+//		}
+		Node p;
+        int normalInterval = 1;
+        int myID = this.nodeId;
+        int nextID = finger.get(i).node.getNodeId();
+        if (myID >= nextID) 
+            normalInterval = 0;
+        else normalInterval = 1;
+
+        //System.out.println("here!" + s.getID() + " between " + myID + " and " + nextID);
+
+        if ( ((normalInterval==1 && (s.getNodeId() >= myID && s.getNodeId() < nextID)) ||
+        		(normalInterval==0 && (s.getNodeId() >= myID || s.getNodeId() < nextID)))
+             && (this.nodeId != s.getNodeId() ) 
+        ) {
+            finger.get(i).node = s;
+            p = this.predecessorNode;
+            p.updateFingerTable(s, i);
+        }
 	}
 
 	@Override
-	public boolean insert(String word, String definition) throws RemoteException {
+	public String insert(String word, String definition) throws RemoteException {
 		int key = FNV1aHash.hash32(word);
 		Node p = this.findPredecessor(key).successor();
 		p.insertHere(word, definition);
-		return false;
+		return p.getNodeURL();
 	}
 	
 	@Override
@@ -319,14 +416,16 @@ public class Server extends UnicastRemoteObject implements Node {
 	public String printFingerTable() throws RemoteException {
 		StringBuilder b = new StringBuilder();
 		this.finger.forEach((fgr)->{
-			try {
-				b.append("start:"); b.append(fgr.start);
-				Node node = fgr.node;
-				b.append(" node-key:"); b.append(node.getNodeId());
-				b.append(" node-url:"); b.append(node.getNodeURL());
-				b.append(System.lineSeparator());
-			} catch (RemoteException e) {
-				e.printStackTrace();
+			if (fgr != null) {
+				try {
+					b.append("start:"); b.append(fgr.start);
+					Node node = fgr.node;
+					b.append(" node-key:"); b.append(node.getNodeId());
+					b.append(" node-url:"); b.append(node.getNodeURL());
+					b.append(System.lineSeparator());
+				} catch (RemoteException e) {
+					e.printStackTrace();
+				}
 			}
 		});
 		String tableString = b.toString();
@@ -346,6 +445,7 @@ public class Server extends UnicastRemoteObject implements Node {
 				
 		logger.info("------Printing Local Dictionary----");
 		logger.info(dictString);
+		logger.info("Number of entries is: "+this.dictionary.size());
 		return dictString;
 	}
 

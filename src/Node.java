@@ -19,7 +19,7 @@ public interface Node extends Remote {
 	public Node  predecessor  () throws RemoteException;
 	public boolean join (String nodeURL) throws RemoteException, InterruptedException;
 	public boolean joinFinished (String nodeURL) throws RemoteException, InterruptedException;
-	public boolean insert (String word, String definition) throws RemoteException;
+	public String insert (String word, String definition) throws RemoteException;
 	public String  lookup (String word) throws RemoteException;
 	public String  printFingerTable() throws RemoteException;
 	public String  printDictionary() throws RemoteException;
@@ -27,5 +27,6 @@ public interface Node extends Remote {
 	public void insertHere(String word, String definition) throws RemoteException;
 	public String lookupHere(String word) throws RemoteException;
 	public String getNodeURL() throws RemoteException;
+	public int generateNodeId() throws RemoteException;
 }
 

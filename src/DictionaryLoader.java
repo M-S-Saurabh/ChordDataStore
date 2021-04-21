@@ -1,5 +1,7 @@
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.MalformedURLException;
+import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -27,10 +29,13 @@ public class DictionaryLoader {
 		String nodeURL = args[0];
 		String dictionaryFilename = args[1];
 
+		System.setProperty("java.security.policy","file:./security.policy");
+        System.setSecurityManager(new SecurityManager());
 		// Connect to cluster.
 		Node serverNode = connectToServer(nodeURL);
 
 		// Insert data into cluster
+		logger.info("Inserting word-definitions into the DHT...");
 		try (Stream<String> lines = Files.lines(Paths.get(dictionaryFilename), Charset.defaultCharset())) {
 			lines.forEachOrdered(line -> {
 				try {
@@ -40,8 +45,9 @@ public class DictionaryLoader {
 				}
 			});
 		}
+		logger.info("Data Insertion: Complete.");
 	}
-	
+
 	private static void configureLogger() throws SecurityException, IOException {
 		FileHandler fh = new FileHandler("./logs/DictionaryLoader.log");
 		logger.addHandler(fh);
@@ -51,9 +57,6 @@ public class DictionaryLoader {
 	}
 
 	private static Node connectToServer(String nodeURL) {
-		System.setProperty("java.security.policy","file:./security.policy");
-        System.setSecurityManager(new SecurityManager());
-        
 		try {
 			// Getting Server stub from RMI registry.
 			Node chordServer = (Node) Naming.lookup(String.format("rmi://%s", nodeURL));
@@ -69,7 +72,8 @@ public class DictionaryLoader {
 
 	public static void insertWord(String line, Node serverNode) throws RemoteException {
 		String[] splitArray = line.split(" : ", 2);
-		serverNode.insert(splitArray[0], splitArray[1]);
+		String node = serverNode.insert(splitArray[0], splitArray[1]);
+		System.out.println("Node:"+node+ " Word:"+ splitArray[0]);
 	}
 
 }
