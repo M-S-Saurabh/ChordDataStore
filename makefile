@@ -10,6 +10,7 @@ CLASSES = \
 	./src/Node.java \
 	./src/Finger.java \
 	./src/Server.java \
+	./src/DictionaryLoader.java\
 	./src/Client.java 
 
 default: classes
