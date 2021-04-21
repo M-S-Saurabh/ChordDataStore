@@ -269,7 +269,7 @@ public class Server extends UnicastRemoteObject implements Node {
 	private void initFingerTable(Node node0) throws RemoteException {
 		logger.info(this.nodeURL+" init table for");
 		//logger.finer(this.nodeURL+" init table for");
-		boolean traceFlag = false;
+		boolean traceFlag = true;
 		this.finger.get(1).node = node0.findSuccessor(this.finger.get(1).start, traceFlag);
 		this.predecessorNode = this.successor().predecessor();
 		this.successor().setPredecessor(this); // implicit RMI call @_@
@@ -312,7 +312,7 @@ public class Server extends UnicastRemoteObject implements Node {
 			int id = n - (1 << (i-1)) + 1;
 			if (id < 0)
 				id += (1 << m);
-			Node p = findPredecessor(id, false);
+			Node p = findPredecessor(id, true);
 			p.updateFingerTable(this, i);
 		}
 	}
@@ -340,7 +340,7 @@ public class Server extends UnicastRemoteObject implements Node {
 	@Override
 	public String insert(String word, String definition) throws RemoteException {
 		int key = FNV1aHash.hash32(word);
-		Node p = this.findPredecessor(key, false).successor();
+		Node p = this.findPredecessor(key, true).successor();
 		p.insertHere(word, definition);
 		return p.getNodeURL();
 	}
@@ -353,7 +353,7 @@ public class Server extends UnicastRemoteObject implements Node {
 	@Override
 	public String lookup(String word) throws RemoteException {
 		int key = FNV1aHash.hash32(word);
-		Node p = this.findPredecessor(key, false).successor();
+		Node p = this.findPredecessor(key, true).successor();
 		return p.lookupHere(word);
 	}
 	
