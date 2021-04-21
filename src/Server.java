@@ -94,19 +94,26 @@ public class Server extends UnicastRemoteObject implements Node {
 											Constants.RMI_SERVER_NAME);
 		this.nodeURL = String.format(this.rmiUrlFormat, serverId);
 		logger.info("nodeURL is: "+nodeURL);
-		this.joiningURL = "";
+		
+		this.joiningURL = ""; // this is set only in node0
 		
 		this.m = Constants.KEY_BITS;
 		
-		this.nodeId = FNV1aHash.hash32( serverName );
+		this.nodeId = FNV1aHash.hash32(serverName);
 		logger.info("Hash for this serverName is: "+this.nodeId);
 		
 		this.createFingerTable();
 		
 		this.dictionary = new Hashtable<String, String>();
 		
-		if(serverId > 0) {
-			this.connectToCluster();
+		if(serverId == 0) {
+			for(int i=1; i<=m; i++) {
+				this.finger.get(i).node = this;
+			}
+			this.predecessorNode = this;
+			
+		} else {
+			this.connectToCluster(); // put in runnable ? 
 		}
 	}
 	
@@ -125,8 +132,9 @@ public class Server extends UnicastRemoteObject implements Node {
 			// Getting Node-0 stub from RMI registry.
 			String rmiURL = String.format(this.rmiUrlFormat, 0);
 			Node node0 = (Node) Naming.lookup(rmiURL);
-			node0.join(this.nodeURL);
 			
+			node0.join(this.nodeURL);
+			joinProcess(node0); //critical section for join
 			node0.joinFinished(this.nodeURL);
 			
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
@@ -138,14 +146,19 @@ public class Server extends UnicastRemoteObject implements Node {
 
 	@Override
 	public Node findSuccessor(int key, boolean traceFlag) throws RemoteException {
+		logger.info("find sucessor by: "+this.nodeURL+ " for start: "+key);
+		//logger.finer("find sucessor by: "+this.nodeURL+ " for start: "+key);
 		Node n1 = this.findPredecessor(key);
 		return n1.successor();
 	}
 
 	@Override
 	public Node findPredecessor(int key) throws RemoteException {
+		logger.info("find predecessor by: "+this.nodeURL+ " for start: "+key);
+		//logger.finer("find predecessor by: "+this.nodeURL+ " for start: "+key);
+
 		Node n1 = this;
-		while(key <= n1.getNodeId() || key > n1.successor().getNodeId()) {
+		while (key <= n1.getNodeId() || key > n1.successor().getNodeId()) {
 			n1 = n1.closestPrecedingFinger(key);
 		}
 		return n1;
@@ -153,6 +166,8 @@ public class Server extends UnicastRemoteObject implements Node {
 
 	@Override
 	public Node closestPrecedingFinger(int key) throws RemoteException {
+		logger.info(this.nodeURL+" closest preceding finger for key: "+key);
+		//logger.finer(this.nodeURL+" closest preceding finger for key: "+key);
 		for(int i=m; i>0; i--) {
 			if(this.nodeId < this.finger.get(i).node.getNodeId() 
 					&& this.finger.get(i).node.getNodeId() < key) {
@@ -174,50 +189,59 @@ public class Server extends UnicastRemoteObject implements Node {
 
 	@Override
 	public synchronized boolean join(String nodeURL) throws RemoteException, InterruptedException {
-		while(this.joiningURL.length() != 0) {
+		logger.info(nodeURL+" is trying to aquire join lock");
+		//logger.finer(nodeURL+" is trying to aquire join lock");
+		while (this.joiningURL.length() != 0) {
 			wait();
 		}
+		logger.info(nodeURL+" join lock acquired");
+		//logger.finer(nodeURL+" join lock acquired");
 		this.joiningURL = nodeURL;
-		notify();
 		return true;
 	}
 	
 	@Override
 	public synchronized boolean joinFinished(String nodeURL) throws RemoteException, InterruptedException {
-		while(!this.joiningURL.equals(nodeURL)) {
-			wait();
-		}
+		/*
+		 * while(!this.joiningURL.equals(nodeURL)) { wait(); }
+		 */ // not sure if this while is needed
+		logger.info(nodeURL+" is releasing the join lock");
+		//logger.finer(nodeURL+" is trying is releasing the join lock");
 		this.joiningURL = "";
-		notify();
-		return false;
+		notifyAll();
+		return true; 
 	}
 	
-	private void joinProcess(Node n1) throws RemoteException {
-		if (n1 != null) {
-			initFingerTable(n1);
+	private void joinProcess(Node node0) throws RemoteException {
+		//if (n1 != null) {
+			initFingerTable(node0);
 			updateOthers();
-		}else {
-			for(int i=1; i<=m; i++) {
-				this.finger.get(i).node = this;
-			}
-			this.predecessorNode = this;
-		}
+		///} else { called direclty for node0
+		//	for(int i=1; i<=m; i++) {
+		//		this.finger.get(i).node = this;
+		//	}
+		//	this.predecessorNode = this;
+		//}
 	}
 
 	// This function is originally called init_finger_table in the paper.
-	private void initFingerTable(Node n1) throws RemoteException {
+	private void initFingerTable(Node node0) throws RemoteException {
+		logger.info(this.nodeURL+" init table for");
+		//logger.finer(this.nodeURL+" init table for");
 		boolean traceFlag = false;
-		this.finger.get(1).node = n1.findSuccessor(finger.get(1).start, traceFlag);
+		this.finger.get(1).node = node0.findSuccessor(this.finger.get(1).start, traceFlag);
 		this.predecessorNode = this.successor().predecessor();
-		this.successor().setPredecessor(this);
-		for(int i=1; i<m; i++) {
+		this.successor().setPredecessor(this); // implicit RMI call @_@
+		logger.info("setting up the fingers for: "+this.nodeURL);
+		for (int i=1; i<m; i++) {
 			if(this.nodeId < finger.get(i+1).start 
 					&& finger.get(i+1).start <= finger.get(i+1).node.getNodeId()) {
 				finger.get(i+1).node = finger.get(i).node;
 			}else {
-				finger.get(i+1).node = n1.findSuccessor(finger.get(i+1).start, traceFlag);
+				finger.get(i+1).node = node0.findSuccessor(finger.get(i+1).start, traceFlag);
 			}
 		}
+		logger.info(this.nodeURL+" init table complete");
 	}
 	
 	private void updateOthers() throws RemoteException {
