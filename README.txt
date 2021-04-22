@@ -9,24 +9,35 @@ HOW TO RUN:
 USING PYTHON SCRIPT:
 ---------------------
 You can download the code onto any CSE labs machine and run the python script supplied:
-	before running the python script, please to compile the java class files:
+	
+	before running the python script, to compile the java class files:
 		make
 		
+	The following commands can be run in the same terminal in succession:
+	
 	To run server processes: 
-		python3 run.py SRV <instance-number> 
-	instance number can be between 0,....7 (for 8 instances)
-	(Run this line for instance number 0 through 7 on a new terminal each time)
+		python3 run.py SRV <port-number> <number-of-nodes> 
+
+	***port number to be used in our case is 1099 for the RMI registry***
 	
 	To load the dictionary:
 		 python3 run.py DICT <port-number>
 		 
 	To run client processes:
 		python3 run.py CLNT <port-number> <number-of-nodes>
-	(port number is the RMI registry port and number of nodes is 8)
+		
+PS: 
+in the case you wish to retry the code, the rmi registry needs to be restarted for which you should follow:
+	user@csel-vole-04:/home/user/GIT/ChordDataStore $ ps -ef | grep rmiregistry
+	user 4180230 4130018  1 20:14 pts/4    00:00:00 rmiregistry 1099
+	user 4181149 4133288  0 20:15 pts/4    00:00:00 grep rmiregistry
+	user@csel-vole-04:/home/user/GIT/ChordDataStore $ kill 4180230
+
+        	
 
 WITHOUT USING THE PYTHON SCRIPT:
 ----------------------------
-- Change directory into the ChorDataStore folder
+- Change directory into the project folder
 
 - To compile all the relevant java classes, enter:
 	make
@@ -36,9 +47,9 @@ WITHOUT USING THE PYTHON SCRIPT:
 
 - To start rmiregistry, from the same terminal enter:
 		rmiregistry <port-number>
-	for our testing we used the port number 1099.
+	***for our testing we used the port number 1099.***
 
-- To start the server process, open a new terminal at the same directory */ChordDataStore/* and enter:
+- To start the server process, open a new terminal at the project directory and enter:
 		java Server <instance number>
 
 - perform the above operation for instance number 0 through 7, on different terminal instances.
@@ -51,6 +62,14 @@ WITHOUT USING THE PYTHON SCRIPT:
 
 - Wait for the DictionaryLoader to complete, start the client process:
 		java Client localhost:<port-number>/node00 <number-of-nodes>
+		
+PS: 
+in the case you wish to retry the code, the rmi registry needs to be restarted for which you should follow:
+	user@csel-vole-04:/home/user/GIT/ChordDataStore $ ps -ef | grep rmiregistry
+	user 4180230 4130018  1 20:14 pts/4    00:00:00 rmiregistry 1099
+	user 4181149 4133288  0 20:15 pts/4    00:00:00 grep rmiregistry
+	user@csel-vole-04:/home/user/GIT/ChordDataStore $ kill 4180230
+	
 
 ---------------------------------------------------------------------------------------------------
 CLIENT INTERACTION EXAMPLE:
