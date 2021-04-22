@@ -14,11 +14,12 @@ You can download the code onto any CSE labs machine and run the python script su
 		make
 		
 	The following commands can be run in the same terminal in succession:
-	
+	-------------------------------------------------------
+	*** IN ALL COMMANDS PORT NUMBER SHOULD BE: 1099 ***
+	-------------------------------------------------------
+
 	To run server processes: 
 		python3 run.py SRV <port-number> <number-of-nodes> 
-
-	***port number to be used in our case is 1099 for the RMI registry***
 	
 	To load the dictionary:
 		 python3 run.py DICT <port-number>
@@ -32,6 +33,8 @@ in the case you wish to retry the code, the rmi registry needs to be restarted f
 	user 4180230 4130018  1 20:14 pts/4    00:00:00 rmiregistry 1099
 	user 4181149 4133288  0 20:15 pts/4    00:00:00 grep rmiregistry
 	user@csel-vole-04:/home/user/GIT/ChordDataStore $ kill 4180230
+
+To kill all java processes previosuly created, you can run: `killall -9 java`
 
         	
 
